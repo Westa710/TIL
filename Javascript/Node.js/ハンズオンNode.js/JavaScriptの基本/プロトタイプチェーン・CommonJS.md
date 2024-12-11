@@ -1,4 +1,5 @@
-#　Today I learned...
+# Today I learned
+
 ## プロトタイプチェーン
 
 - JavaScriptのクラスは，プロトタイプチェーンに基づく継承の仕組みを持っている．
