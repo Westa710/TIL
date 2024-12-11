@@ -66,7 +66,7 @@ console.log(global.myStrng)
 
 コンソール
 
-```
+```console
 $ node cjs-non-strict-mode
 にほへと
 ```
@@ -87,7 +87,7 @@ console.log(global.myStrng)
 
 コンソール
 
-```
+```console
 $ node cjs-strict-mode
 ReferenceError: myStrng is not defined
 ...
