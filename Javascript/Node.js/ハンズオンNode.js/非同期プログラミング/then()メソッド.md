@@ -3,7 +3,7 @@
 ## Then()メソッド
 
 - 非同期処理の結果をハンドリングするためのメソッド
-- Promiseインスタンスの状態がsettled(fulfilled若しくはrejected)任あったとき実行するコールバックを登録する
+- Promiseインスタンスの状態がsettled(fulfilled若しくはrejected)になったとき実行するコールバックを登録する
 - then()の戻り値は，登録したコールバックの戻り値で解決される新しいPromiseインスタンス
 
 ```Console
