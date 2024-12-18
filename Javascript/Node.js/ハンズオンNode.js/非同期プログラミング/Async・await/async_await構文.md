@@ -9,7 +9,7 @@
 ジェネレータ関数におけるyieldキーワードがawait相当
 await後ろの非同期処理が終了するまで待機する．async関数の外部の処理はawaitの影響を受けない
 
-### 例
+### 例1
 
 ```Javascript
 async function asyncFunc(input) {
@@ -44,7 +44,42 @@ function doSomethingAsync() {
 - ESmodule形式では，トップレベルにawaitを記述してモジュールを非同期に読み込むことができる
 - 時間のかかるモジュールの読み込みを行っている間に，他のモジュールを読み込みできる(ノンブロッキング処理)
 
-CommonJS形式では，この対策として即時実行関数として非同期処理をする方法はある
+### 例2
+
+child-a.mjs
+
+```JavaScript
+console.log('child-a 1')
+await new Promise(resolve => setTimeout(resolve, 1000))
+console.log('child-a 2')
+```
+
+child-b.mjs
+
+```JavaScript
+console.log('child-b')
+```
+
+parent.mjs
+
+```JavaScript
+import './child-a.mjs'
+import './child-a.mjs'
+console.log('parent')
+```
+
+parent.mjsを実行すると出力は以下のようになる
+
+```Console
+$ node parent.mjs
+child-a 1
+child-b
+ # 1秒待機
+child-a 2
+parent
+```
+
+CommonJS形式では，この対策として即時実行async関数式として非同期処理をする方法はある
 
 ```JavaScript
 (async () => {
