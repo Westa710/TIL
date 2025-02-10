@@ -1,6 +1,4 @@
-# Today I Learned
-
-## undefinedとnullの違い
+# undefinedとnullの違い
 
 言語仕様上の違いは明確であるが，
 意味合いの違いとしては，undefinedが「値が代入されていないため，
